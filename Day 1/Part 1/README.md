@@ -47,5 +47,5 @@ while (<INPUT>) {
         $last = $last + $line;
     }
 }
-print $output;
+print $highest;
 ```
