@@ -18,8 +18,10 @@ BEGIN {
     getline;
 }
 {
-    data[int($6)] = sprintf("%s%s", substr(data[int($4)],1,$2), data[int($6)])
-    data[int($4)] = substr(data[int($4)],$2)
+    for (i = 1; i <= $2; i++) {
+        data[int($6)] = sprintf("%s%s", substr(data[int($4)],1,1), data[int($6)])
+        data[int($4)] = substr(data[int($4)],2)
+    }
 }
 END{
     for (x = 1; x <= columns; x++) {
