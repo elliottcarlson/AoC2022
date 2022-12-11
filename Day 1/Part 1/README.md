@@ -4,7 +4,7 @@ Run
 ---
 
 ```
-❯ ./solve.sh input.txt
+❯ ./solve.sh ../input.txt
 ```
 
 
@@ -12,7 +12,7 @@ Benchmark (Actual input data)
 -----------------------------
 
 ```
-❯ perf stat -r 10 -d go ./solve.sh input.txt
+❯ perf stat -r 10 -d ./solve.sh ../input.txt
 ...
 0.03558 +- 0.00245 seconds time elapsed  ( +-  6.88% )
 ```
@@ -23,7 +23,7 @@ Bonus
 I was again nerd sniped in to writing this as compact as possible in Perl:
 
 ```
-perl -pe'$\=$l,if$l>$\;$l=$_==$/?0:$l+$_}{'<input.txt
+perl -pe'$\=$l,if$l>$\;$l=$_==$/?0:$l+$_}{'<../input.txt
 ```
 
 Using `perl -p` will wrap the entire statement in `while (<>) { ...; print }`. By using `}{` at the end of the Perl statement, it will only perform the final print at the end of the while loop. The code that will be interpreted now looks like:
@@ -79,7 +79,7 @@ Bonus Benchmark (Actual input data)
 -----------------------------------
 
 ```
-❯ perf stat -r 10 -d perl -pe'$\=$l,if$l>$\;$l=$_==$/?0:$l+$_}{'<input.txt
+❯ perf stat -r 10 -d perl -pe'$\=$l,if$l>$\;$l=$_==$/?0:$l+$_}{'<../input.txt
 ...
 0.004744 +- 0.000138 seconds time elapsed  ( +-  2.91% )
 ```

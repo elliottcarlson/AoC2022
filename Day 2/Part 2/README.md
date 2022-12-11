@@ -4,7 +4,7 @@ Run
 ---
 
 ```
-❯ ./solve.sh input.txt
+❯ ./solve.sh ../input.txt
 ```
 
 
@@ -12,7 +12,7 @@ Benchmark (Actual input data)
 -----------------------------
 
 ```
-❯ perf stat -r 10 -d go ./solve.sh input.txt
+❯ perf stat -r 10 -d ./solve.sh ../input.txt
 ...
 0.009702 +- 0.000177 seconds time elapsed  ( +-  1.82% )
 ```
